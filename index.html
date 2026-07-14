@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <h1 class="logo">CocktailHub</h1>
+            <span class="badge">Assignment 02</span>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <section class="search-section">
+            <input type="text" id="search-input" placeholder="Search for a drink..." class="search-input" />
+            <button id="search-btn" class="btn btn-primary">Search</button>
+        </section>
+
+        <div class="app-layout">
+
+            <div class="drinks-column">
+                <h2 class="section-title">
+                    Drinks List
+                    <span id="loading-spinner" class="spinner hidden">(Loading...)</span>
+                </h2>
+
+                <div id="drinks-container" class="drinks-grid"></div>
+
+                <div id="not-found-msg" class="not-found hidden">
+                    <p>No drinks found. Try a different search term!</p>
+                </div>
+            </div>
+
+            <div class="sidebar-column">
+                <div class="sidebar-card">
+                    <h2 class="sidebar-title">
+                        <span>My Group</span>
+                        <span id="group-count" class="counter-badge">0/7</span>
+                    </h2>
+
+                    <ul id="group-list" class="group-list"></ul>
+
+                    <div id="group-empty-placeholder" class="empty-placeholder">
+                        No drinks added yet. Click Add to group to build your lineup!
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="details-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header-img">
+                <img id="modal-img" src="" alt="">
+                <div class="modal-title-overlay">
+                    <h3 id="modal-title"></h3>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="info-group">
+                    <span class="info-tag tag-category">Category</span>
+                    <p id="modal-category" class="info-text"></p>
+                </div>
+                <div class="info-group">
+                    <span class="info-tag tag-type">Type</span>
+                    <p id="modal-alcoholic" class="info-text"></p>
+                </div>
+                <div class="info-group">
+                    <span class="info-tag tag-glass">Glass</span>
+                    <p id="modal-glass" class="info-text"></p>
+                </div>
+                <div class="info-group">
+                    <span class="info-tag tag-instructions">Instructions</span>
+                    <p id="modal-instructions" class="info-text instructions-text"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="close-modal-btn" class="btn btn-dark">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
